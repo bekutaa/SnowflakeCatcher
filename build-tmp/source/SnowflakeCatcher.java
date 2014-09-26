@@ -18,6 +18,7 @@ SnowFlake [] storm;
 boolean drawCatcher = true;
 
 int eraserSize = 15;
+int timeCounter = 0;
 
 public void setup()
 {
@@ -32,7 +33,7 @@ public void setup()
 }
 public void draw()
 {
-
+  
   for (int i = 0; i < storm.length; i++)
   {
     storm[i].erase();
@@ -40,8 +41,17 @@ public void draw()
     storm[i].move();
     storm[i].wrap();
     storm[i].show();
+    if(i < 20 && timeCounter%10 == 0)
+    {
+      System.out.print(storm[i].myY + " ");
+    }
+  }
+  if(timeCounter%10 == 0)
+  {
+    System.out.println();
   }
   
+  timeCounter++;
 }
 
 public void mouseDragged()
@@ -118,7 +128,7 @@ class SnowFlake
   public void lookDown()
   {
     // if below is not black, and is onscreen, then don't move
-    if(get(myX,myY+mySize) != color(0) && myY > 399 )//&& myY < 395)
+    if(get(myX,myY+mySize) != color(0) && myY >= 5 && myY < 395)
     {
       moveFlag = false;
     }
@@ -139,12 +149,12 @@ class SnowFlake
   public void erase()
   {
     fill(0);
-    ellipse(myX,myY,mySize+1,mySize+1);
+    ellipse(myX,myY,mySize+3,mySize+3);
 
-    if(myCount > myTimer)
-    {
-      moveFlag = true;
-    }
+    // if(myCount > myTimer)
+    // {
+    //   moveFlag = true;
+    // }
   }
 
   public void move()
