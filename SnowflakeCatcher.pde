@@ -9,7 +9,7 @@ void setup()
   size(400,400);
   background(0);
 
-  storm = new SnowFlake[500];
+  storm = new SnowFlake[600];
   for (int i = 0; i < storm.length; i++)
   {
     storm[i] = new SnowFlake();
@@ -25,17 +25,17 @@ void draw()
     storm[i].move();
     storm[i].wrap();
     storm[i].show();
-    if(i < 20 && timeCounter%10 == 0)
-    {
-      System.out.print(storm[i].myY + " ");
-    }
+//    if(i < 20 && timeCounter%10 == 0)
+//    {
+//      System.out.print(storm[i].myY + " ");
+//    }
   }
-  if(timeCounter%10 == 0)
-  {
-    System.out.println();
-  }
+//  if(timeCounter%10 == 0)
+//  {
+//    System.out.println();
+//  }
   
-  timeCounter++;
+ // timeCounter++;
 }
 
 void mouseDragged()
@@ -58,6 +58,11 @@ void keyPressed()
   {
     drawCatcher = !drawCatcher;
   }
+  if(key == 'x')
+  {
+    background(0);
+  }
+
   if(key == 'a')
   {
     if(eraserSize < 1000)
@@ -89,7 +94,7 @@ class SnowFlake
     moveFlag = false;
     mySize = 5;
 
-    myTimer = (int)(Math.random()*420);
+    myTimer = (int)(Math.random()*480);
     myCount = 0;
   }
 
@@ -106,7 +111,6 @@ class SnowFlake
     noStroke();
     fill(myColor);
     ellipse(myX,myY,mySize,mySize);
-
   }
 
   void lookDown()
@@ -149,7 +153,7 @@ class SnowFlake
     if(myY > 410)
     {
       myX = (int)(Math.random()*width);
-      myY = 0;
+      myY = (int)(Math.random()*80)-75;
     }
   }
 }
