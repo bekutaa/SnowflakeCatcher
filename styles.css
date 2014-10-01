@@ -1,7 +1,6 @@
 
 body {
-    background-color: rgb(200,200,200);
-    color: rgb(0,0,0);
+    color: rgb(255,255,255);
     font-family: "Open Sans", sans-serif;
     text-align: center;
 }
@@ -12,12 +11,27 @@ body {
     margin-right: auto
 }
 
+h1 {
+    font-size: 36px;
+}
+
 header {
-	
+    color: white;
+}
+
+html {
+    background: url("http://freeworshiploops.com/wp-content/uploads/2009/12/snowy-night.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+span {
+    color: white;
+}
 }
 
 footer {
-	font-style: italic;
-	font-size: 90%;
+    font-style: italic;
+    font-size: 90%;
 }
-
