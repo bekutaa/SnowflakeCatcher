@@ -21,7 +21,7 @@ header {
 
 html {
     background: url("http://freeworshiploops.com/wp-content/uploads/2009/12/snowy-night.jpg");
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center center;
 }
