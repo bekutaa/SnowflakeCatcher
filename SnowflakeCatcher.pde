@@ -1,7 +1,7 @@
 SnowFlake [] storm;
 int backColor = color(30,30,90);
 
-int eraserSize = 20;
+int eraserSize = 15;
 
 void setup()
 {
@@ -100,8 +100,8 @@ class SnowFlake
 
   void lookDown()
   {
-    // if below is not black, and is onscreen, then don't move
-    if(get(myX,myY+mySize) != color(backColor) && myY > -1 && myY < height-5)
+    // if below is not the background color, and is onscreen, then don't move
+    if(get(myX,myY+mySize) != color(backColor) && myY > 0 && myY < 600)
     {
       moveFlag = false;
     }
