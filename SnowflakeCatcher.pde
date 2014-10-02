@@ -1,6 +1,6 @@
 SnowFlake [] storm;
-int backColor = color(1,1,1);
-//snowflakes get stuck with color(30,30,90), color(50), color(50,50,50)
+int backColor = color(0,0,0);
+//snowflakes get stuck with color(30,30,90), color(50), color(50,50,50), color(1,1,1), 
  //color(30,30,90);
 
 int eraserSize = 15;
