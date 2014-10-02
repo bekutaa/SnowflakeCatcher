@@ -138,7 +138,7 @@ class SnowFlake
     if(myY > height + 10)
     {
       myX = (int)(Math.random()*width);
-      myY = (int)(Math.random()*(height/2))-(height/2);
+      myY = (int)(Math.random()*300)-300;
     }
   }
 }
