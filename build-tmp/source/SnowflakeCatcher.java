@@ -18,14 +18,13 @@ SnowFlake [] storm;
 boolean drawCatcher = true;
 
 int eraserSize = 15;
-int timeCounter = 0;
 
 public void setup()
 {
   size(400,400);
   background(0);
 
-  storm = new SnowFlake[600];
+  storm = new SnowFlake[700];
   for (int i = 0; i < storm.length; i++)
   {
     storm[i] = new SnowFlake();
@@ -41,27 +40,17 @@ public void draw()
     storm[i].move();
     storm[i].wrap();
     storm[i].show();
-//    if(i < 20 && timeCounter%10 == 0)
-//    {
-//      System.out.print(storm[i].myY + " ");
-//    }
   }
-//  if(timeCounter%10 == 0)
-//  {
-//    System.out.println();
-//  }
-  
- // timeCounter++;
 }
 
 public void mouseDragged()
 {
   noStroke();
-  if(drawCatcher)
+  if(mouseButton == LEFT)
   {
     fill(255,0,0);
   }
-  else
+  if(mouseButton == RIGHT)
   {
     fill(0,0,0);
   }
@@ -81,7 +70,7 @@ public void keyPressed()
 
   if(key == 'a')
   {
-    if(eraserSize < 1000)
+    if(eraserSize < 125)
     {
       eraserSize = eraserSize + 5;
     }
@@ -108,7 +97,7 @@ class SnowFlake
     myY = -10;
     myColor = color(255,255,255);
     moveFlag = false;
-    mySize = 5;
+    mySize = 4;
 
     myTimer = (int)(Math.random()*480);
     myCount = 0;
@@ -132,7 +121,7 @@ class SnowFlake
   public void lookDown()
   {
     // if below is not black, and is onscreen, then don't move
-    if(get(myX,myY+mySize) != color(0) && myY >= 5 && myY < 395)
+    if(get(myX,myY+mySize) != color(0) && myY > 0 && myY < 395)
     {
       moveFlag = false;
     }
@@ -169,7 +158,7 @@ class SnowFlake
     if(myY > 410)
     {
       myX = (int)(Math.random()*width);
-      myY = (int)(Math.random()*80)-75;
+      myY = (int)(Math.random()*150)-150;
     }
   }
 }
