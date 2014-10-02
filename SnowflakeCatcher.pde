@@ -1,13 +1,14 @@
 SnowFlake [] storm;
+int backColor = color(30,30,90);
 
-int eraserSize = 15;
+int eraserSize = 20;
 
 void setup()
 {
-  size(400,400);
-  background(0);
+  size(800,600);
+  background(backColor);
 
-  storm = new SnowFlake[700];
+  storm = new SnowFlake[height*2];
   for (int i = 0; i < storm.length; i++)
   {
     storm[i] = new SnowFlake();
@@ -35,7 +36,7 @@ void mouseDragged()
   }
   if(mouseButton == RIGHT)
   {
-    fill(0,0,0);
+    fill(backColor);
   }
   ellipse(mouseX,mouseY,eraserSize,eraserSize);
 }
@@ -44,7 +45,7 @@ void keyPressed()
 {
   if(key == 'x')
   {
-    background(0);
+    background(backColor);
   }
 
   if(key == 'a')
@@ -78,7 +79,7 @@ class SnowFlake
     moveFlag = false;
     mySize = 4;
 
-    myTimer = (int)(Math.random()*480);
+    myTimer = (int)(Math.random()*(height*1.5));
     myCount = 0;
   }
 
@@ -100,7 +101,7 @@ class SnowFlake
   void lookDown()
   {
     // if below is not black, and is onscreen, then don't move
-    if(get(myX,myY+mySize) != color(0) && myY > 0 && myY < 395)
+    if(get(myX,myY+mySize) != color(backColor) && myY > 0 && myY < height-5)
     {
       moveFlag = false;
     }
@@ -120,7 +121,7 @@ class SnowFlake
 
   void erase()
   {
-    fill(0);
+    fill(backColor);
     ellipse(myX,myY,mySize+3,mySize+3);
   }
 
@@ -134,10 +135,10 @@ class SnowFlake
 
   void wrap()
   {
-    if(myY > 410)
+    if(myY > height + 10)
     {
       myX = (int)(Math.random()*width);
-      myY = (int)(Math.random()*150)-150;
+      myY = (int)(Math.random()*(height/2))-(height/2);
     }
   }
 }
