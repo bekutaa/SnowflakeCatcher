@@ -1,5 +1,5 @@
 SnowFlake [] storm;
-int backColor = color(30,30,90);
+int backColor = color(0); //color(30,30,90);
 
 int eraserSize = 15;
 

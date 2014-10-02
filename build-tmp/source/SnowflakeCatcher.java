@@ -15,9 +15,9 @@ import java.io.IOException;
 public class SnowflakeCatcher extends PApplet {
 
 SnowFlake [] storm;
-int backColor = color(30,30,90);
+int backColor = color(0); //color(30,30,90);
 
-int eraserSize = 20;
+int eraserSize = 15;
 
 public void setup()
 {
