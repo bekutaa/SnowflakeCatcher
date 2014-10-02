@@ -8,7 +8,7 @@ void setup()
   size(800,600);
   background(backColor);
 
-  storm = new SnowFlake[height*2];
+  storm = new SnowFlake[2000];
   for (int i = 0; i < storm.length; i++)
   {
     storm[i] = new SnowFlake();
@@ -79,7 +79,7 @@ class SnowFlake
     moveFlag = false;
     mySize = 4;
 
-    myTimer = (int)(Math.random()*(height*1.5));
+    myTimer = (int)(Math.random()*900);
     myCount = 0;
   }
 
