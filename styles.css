@@ -13,17 +13,11 @@ body {
 
 h1 {
     font-size: 36px;
+    color: black;
 }
 
 header {
     color: white;
-}
-
-html {
-/*    background: url("http://freeworshiploops.com/wp-content/uploads/2009/12/snowy-night.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center; */
 }
 
 .bg {
