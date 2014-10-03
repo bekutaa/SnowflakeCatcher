@@ -27,16 +27,20 @@ void draw()
 
 void mouseDragged()
 {
-  noStroke();
+  //noStroke();
+  strokeWeight(eraserSize);
   if(mouseButton == LEFT)
   {
-    fill(255,0,0);
+    //fill(255,0,0);
+    stroke(255,0,0);
   }
   if(mouseButton == RIGHT)
   {
-    fill(0,0,0);
+    // fill(0,0,0);
+    stroke(0,0,0);
   }
-  ellipse(mouseX,mouseY,eraserSize,eraserSize);
+  //ellipse(mouseX,mouseY,eraserSize,eraserSize);
+  line(pmouseX,pmouseY,mouseX,mouseY);
 }
 
 void keyPressed()
@@ -119,6 +123,7 @@ class SnowFlake
 
   void erase()
   {
+    noStroke();
     fill(0);
     ellipse(myX,myY,mySize+3,mySize+3);
   }
