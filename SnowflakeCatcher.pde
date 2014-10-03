@@ -1,12 +1,11 @@
 SnowFlake [] storm;
-//color(30,30,50)
 
 int eraserSize = 15;
 
 void setup()
 {
   size(800,600);
-  background(30,30,50);
+  background(0);
 
   storm = new SnowFlake[1000];
   for (int i = 0; i < storm.length; i++)
@@ -35,7 +34,7 @@ void mouseDragged()
   }
   if(mouseButton == RIGHT)
   {
-    fill(30,30,50);
+    fill(0,0,0);
   }
   ellipse(mouseX,mouseY,eraserSize,eraserSize);
 }
@@ -44,7 +43,7 @@ void keyPressed()
 {
   if(key == 'x')
   {
-    background(30,30,50);
+    background(0);
   }
 
   if(key == 'a')
@@ -100,7 +99,7 @@ class SnowFlake
   void lookDown()
   {
     // if below is not black, and is onscreen, then don't move
-    if(get(myX,myY+mySize) != color(30,30,50) && myY > 0 && myY < height - 5)
+    if(get(myX,myY+mySize) != color(0) && myY > 0 && myY < height - 5)
     {
       moveFlag = false;
     }
@@ -120,7 +119,7 @@ class SnowFlake
 
   void erase()
   {
-    fill(30,30,50);
+    fill(0);
     ellipse(myX,myY,mySize+3,mySize+3);
   }
 
