@@ -43,19 +43,15 @@ public void draw()
 
 public void mouseDragged()
 {
-  //noStroke();
   strokeWeight(eraserSize);
   if(mouseButton == LEFT)
   {
-    //fill(255,0,0);
     stroke(255,0,0);
   }
   if(mouseButton == RIGHT)
   {
-    // fill(0,0,0);
     stroke(0,0,0);
   }
-  //ellipse(mouseX,mouseY,eraserSize,eraserSize);
   line(pmouseX,pmouseY,mouseX,mouseY);
 }
 
