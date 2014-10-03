@@ -1,16 +1,14 @@
 SnowFlake [] storm;
-int backColor = color(0,0,0);
-//snowflakes get stuck with color(30,30,90), color(50), color(50,50,50), color(1,1,1), 
- //color(30,30,90);
+//color(30,30,50)
 
 int eraserSize = 15;
 
 void setup()
 {
   size(800,600);
-  background(backColor);
+  background(30,30,50);
 
-  storm = new SnowFlake[2000];
+  storm = new SnowFlake[1000];
   for (int i = 0; i < storm.length; i++)
   {
     storm[i] = new SnowFlake();
@@ -18,7 +16,6 @@ void setup()
 }
 void draw()
 {
-  
   for (int i = 0; i < storm.length; i++)
   {
     storm[i].erase();
@@ -38,7 +35,7 @@ void mouseDragged()
   }
   if(mouseButton == RIGHT)
   {
-    fill(backColor);
+    fill(30,30,50);
   }
   ellipse(mouseX,mouseY,eraserSize,eraserSize);
 }
@@ -47,7 +44,7 @@ void keyPressed()
 {
   if(key == 'x')
   {
-    background(backColor);
+    background(30,30,50);
   }
 
   if(key == 'a')
@@ -81,7 +78,7 @@ class SnowFlake
     moveFlag = false;
     mySize = 4;
 
-    myTimer = (int)(Math.random()*900);
+    myTimer = (int)(Math.random()*660);
     myCount = 0;
   }
 
@@ -102,8 +99,8 @@ class SnowFlake
 
   void lookDown()
   {
-    // if below is not the background color, and is onscreen, then don't move
-    if(get(myX,myY+mySize) != color(backColor) && myY > 0 && myY < 600)
+    // if below is not black, and is onscreen, then don't move
+    if(get(myX,myY+mySize) != color(30,30,50) && myY > 0 && myY < height - 5)
     {
       moveFlag = false;
     }
@@ -123,7 +120,7 @@ class SnowFlake
 
   void erase()
   {
-    fill(backColor);
+    fill(30,30,50);
     ellipse(myX,myY,mySize+3,mySize+3);
   }
 
@@ -140,7 +137,7 @@ class SnowFlake
     if(myY > height + 10)
     {
       myX = (int)(Math.random()*width);
-      myY = (int)(Math.random()*300)-300;
+      myY = (int)(Math.random()*150)-150;
     }
   }
 }
